@@ -11,10 +11,10 @@ import ntpath
 import os
 import os.path
 from os import path
-import boto3
+# import boto3
 import uuid 
 import shutil
-from botocore.exceptions import ClientError
+# from botocore.exceptions import ClientError
 from typing import Optional
 from flask_cors import CORS
 from binascii import a2b_base64
@@ -22,14 +22,14 @@ import base64
 from base64 import b64decode
 from string import Template
 import base64
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.application import MIMEApplication
-from email.mime.image import MIMEImage
-from email.mime.base import MIMEBase
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+# from email.mime.application import MIMEApplication
+# from email.mime.image import MIMEImage
+# from email.mime.base import MIMEBase
 import smtplib
 import codecs
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from PIL import Image
 
 
@@ -53,8 +53,8 @@ cors_configuration = {
     }]
 }
 
-import boto3
-from botocore.exceptions import ClientError
+# import boto3
+# from botocore.exceptions import ClientError
 
 # Replace sender@example.com with your "From" address.
 # This address must be verified with Amazon SES.
@@ -73,14 +73,14 @@ SUBJECT = "3DConvertMe files are ready!"
 
 CHARSET = "UTF-8"
 
-s3 = boto3.resource('s3', region_name=AWS_REGION)
-s3_client = boto3.client('s3', region_name=AWS_REGION)
-s3_client.put_bucket_cors(Bucket='rigme-09-2020',
-                   CORSConfiguration=cors_configuration)
-ses_client = boto3.client('ses',region_name=AWS_REGION)
-sqs = boto3.resource('sqs',region_name=AWS_REGION)
-sqs_cl = boto3.client('sqs',region_name=AWS_REGION)
-lambda_client = boto3.client('lambda',region_name=AWS_REGION)
+# s3 = boto3.resource('s3', region_name=AWS_REGION)
+# s3_client = boto3.client('s3', region_name=AWS_REGION)
+# s3_client.put_bucket_cors(Bucket='rigme-09-2020',
+#                    CORSConfiguration=cors_configuration)
+# ses_client = boto3.client('ses',region_name=AWS_REGION)
+# sqs = boto3.resource('sqs',region_name=AWS_REGION)
+# sqs_cl = boto3.client('sqs',region_name=AWS_REGION)
+# lambda_client = boto3.client('lambda',region_name=AWS_REGION)
 #sqs_client = sqs_cl.get_queue_by_name(QueueName='rigme_sqs')
 def get_concat_h(im1, im2):
     dst = Image.new('RGBA', (im1.width + im2.width, im1.height),(0,0,0,0))
