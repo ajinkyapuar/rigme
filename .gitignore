@@ -6,3 +6,4 @@ image_background_remove_tool/libs/*
 output/*
 rootkey.csv
 rigme-key-EC2.pem
+.DS_Store
